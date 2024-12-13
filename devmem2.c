@@ -85,7 +85,7 @@ int main(int argc, char **argv) {
 			read_result = *((unsigned short *) virt_addr);
 			break;
 		case 'w':
-			read_result = *((unsigned long *) virt_addr);
+			read_result = *((unsigned int *) virt_addr);
 			break;
 		default:
 			fprintf(stderr, "Illegal data type '%c'.\n", access_type);
@@ -106,8 +106,8 @@ int main(int argc, char **argv) {
 				read_result = *((unsigned short *) virt_addr);
 				break;
 			case 'w':
-				*((unsigned long *) virt_addr) = writeval;
-				read_result = *((unsigned long *) virt_addr);
+				*((unsigned int *) virt_addr) = writeval;
+				read_result = *((unsigned int *) virt_addr);
 				break;
 		}
 		printf("Written 0x%X; readback 0x%X\n", writeval, read_result); 
